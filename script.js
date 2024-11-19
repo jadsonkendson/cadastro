@@ -11,6 +11,23 @@ form.addEventListener("submit", (event) => {
 
 })
 
+
+email.addEventListener("blur",()=>{
+    checkInputEmail();
+})
+
+username.addEventListener("blur",()=>{
+    checkInputUsername();
+})
+password.addEventListener("blur",()=>{
+    checkInputPassword();
+})
+passwordConfirmation.addEventListener("blur",()=>{
+    checkInputPasswordConfirmation();
+})
+
+
+
 function checkInputUsername() {
     const usernameValue = username.value;
 
@@ -38,7 +55,7 @@ function checkInputPassword() {
     const passwordValue = password.value;
     if (passwordValue === "") {
         errorInput(password, "A senha é obrigatória.")
-    } else if (passwordValue.length < 8) {
+    } else if (passwordValue.length < 3) {
         errorInput(password, "A senha precisa ter no mínimo 8 caracteres.")
     } else {
         const formItem = password.parentElement;
